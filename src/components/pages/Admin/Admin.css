@@ -1,0 +1,66 @@
+
+.img-input{
+    display: flex;
+    align-items: center;
+    input{
+    width: 200px;
+
+    }
+}
+.admin{
+    h2{
+        color: red;
+        text-align: center;
+    }
+}
+.krc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.inputs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+    gap: 25px;
+    .name{
+        padding: 10px 15px;
+        width: 300px;
+        height: 45px;
+        border: 1px solid rgba(1, 0, 73, 1);
+
+    }
+    .about-book{
+        padding: 0px 0px 80px 15px;
+        width: 300px;
+        height: 130px;
+        border: 1px solid rgba(1, 0, 73, 1);
+        
+    }
+    button{
+        width: 290px;
+        height: 45px;
+        border: 3px solid rgba(1, 0, 73, 1);
+        border-radius: 2px;
+        background: #fff;
+        font-weight: bold;
+    }
+    input{
+        border: 1px solid rgba(1, 0, 73, 1);
+    }
+}
+.inputt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    input{
+        padding: 10px 15px;
+        width: 142px;
+        height: 40px;
+    }
+}

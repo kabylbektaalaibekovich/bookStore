@@ -1,0 +1,61 @@
+{
+  "data": [
+    {
+      "id": "8bb6",
+      "book": "https://flibusta.su/b/img/big/189.jpg",
+      "name": "Выбор",
+      "category": "Психология",
+      "price": "800 с",
+      "description": "Любовь? Серьезные отношения? Ответственность? Семья? Закоренелый холостяк Тревис Паркер считает, что все это не для него. У него есть отличная работа и верные друзья. Он увлекается охотой, рыбалкой, занимается экстремальными видами спорта — и избегает серьезных отношений."
+    },
+    {
+      "id": "8d24",
+      "book": "https://habrastorage.org/files/e60/eaa/6b9/e60eaa6b9b1f459c82ca0456884fb6cc.png",
+      "name": "Eloquent JS",
+      "category": "Разработчик",
+      "price": "1300 c",
+      "description": "Книга демонстрирует возможности JavaScript для разработки веб-приложений, сочетая теорию с упражнениями и интересными проектами. Она показывает, как простые методы JavaScript могут применяться для создания веб-приложений, начиная от динамических веб-сайтов и заканчивая простыми браузерными играми."
+    },
+    {
+      "id": "73b3",
+      "book": "https://flibusta.one/images/w240/83139.jpg",
+      "name": "1984",
+      "category": "Фантастика",
+      "price": "800 с",
+      "description": "Аннотация ﻿\"1984\" — культовый роман Джорджа Оруэлла, действие которого разворачивается в тоталитарном, бюрократическом государстве, где процветает пропаганда и цензура, а тотальная слежка ведется круглосуточно, и где один человек решил побороться за право быть индивидуальной личностью."
+    },
+    {
+      "id": "65c8",
+      "book": "https://m.media-amazon.com/images/I/71wvDBsPRSL._AC_UF1000,1000_QL80_.jpg",
+      "name": "Python",
+      "category": "Разработчик",
+      "price": "3000 с",
+      "description": "The Python Book delivers an essential introductory guide to learning Python for anyone who works with data but does not have experience in programming. The author, an experienced data scientist and Python programmer, shows readers how to use Python for data analysis, exploration, cleaning, and wrangling."
+    },
+    {
+      "id": "c9c6",
+      "book": "https://fourminutebooks.com/wp-content/uploads/2016/06/best-motivational-books-29-678x1024.jpg",
+      "name": "Zero to One",
+      "category": "Мотивация",
+      "price": "1400 с",
+      "description": " Zero to One Book Summary 'Zero to One' suggests that businesses should prioritize innovation over globalization. The book argues that true value is created through unique innovations, not by simply expanding existing ideas or products to new markets."
+    },
+    {
+      "id": "5807",
+      "book": "https://www.litres.ru/pub/c/cover/70441858.jpg",
+      "name": "Краткое история человечества",
+      "category": "Научная",
+      "price": "999 с",
+      "description": "Сто тысяч лет назад Homo sapiens был одним из как минимум шести видов человека, живших на этой планете, – ничем не примечательным животным, которое играло в экосистеме роль не большую, чем... "
+    },
+    {
+      "id": "dae1",
+      "book": "https://cv7.litres.ru/pub/c/cover_415/48508375.webp",
+      "name": "Выбор",
+      "category": "Писхология",
+      "price": "2345е",
+      "description": "ФЫЧВСАМПИРТ"
+    }
+  ],
+  "basket": []
+}

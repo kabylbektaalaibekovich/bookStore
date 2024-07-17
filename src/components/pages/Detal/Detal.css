@@ -1,0 +1,63 @@
+
+
+
+
+
+.book{
+    display: flex;
+    align-items: center;
+    
+
+}
+
+ .inp-1{
+        width: 500px;
+
+    }
+
+    .book-img{
+        display: flex;
+        gap: 40px;
+
+    }
+    .book-text{
+        h1{
+            font-family: sans-serif;
+
+        }
+        display: flex;
+        flex-direction: column;
+        .text-3{
+            margin-top: 10px;
+            width: 400px;
+            font-weight: 100;
+            font-family: sans-serif;
+            line-height: 30px;
+        }
+        span{
+            font-size: 20px;
+            margin-top: 10px;
+        }
+    }
+
+  
+    .count-btn{
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        gap: 10px;
+      h5{
+        font-size: 20px;
+      }
+
+.countBtn-1{
+    background: none;
+    border: none;
+  
+}
+.countBtn-2{
+    background: none;
+    border: none;
+  
+}
+    }

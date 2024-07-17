@@ -1,0 +1,12 @@
+#basket{
+    margin-top: 100px;
+}
+
+
+.basket{
+display: flex;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+gap: 50px;
+}
