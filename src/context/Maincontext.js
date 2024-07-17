@@ -48,10 +48,6 @@ let { data } = await axios(API)
 setSearch(data)
 }
 ///////////////////////////////////////////////// BASKET //////////////////////////////////////////////////////
-// async function  readBasket(){
-//  let {data} = await axios('http://localhost:3000/basket')
-//   setBasket(data)
-// }
 
 function getStorage(){
   let resBas = JSON.parse(localStorage.getItem('basket' )) || []
