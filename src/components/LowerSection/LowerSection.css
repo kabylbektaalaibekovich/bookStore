@@ -1,0 +1,96 @@
+.swiperSection {
+    margin-top: 30vh;
+}
+
+.bgPopular {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://content.img-gorod.ru/content/uf/68/283/68283.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 50vh;
+}
+
+.textPopular {
+    color: white;
+    font-size: 40px;
+}
+
+.slider-container {
+    margin-top: 50px;
+}
+
+.slider-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.slider-container p {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.swip1 {
+    width:100%; 
+}
+
+.swipImg1 {
+    width: 300px;
+    height:100px; 
+
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .bgPopular {
+        height: 40vh;
+    }
+
+    .textPopular {
+        font-size: 32px;
+    }
+
+    .swip1 {
+        width: 750px;
+        height: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .bgPopular {
+        height: 30vh;
+    }
+
+    .textPopular {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .swip1 {
+       display: none; 
+    }
+    }
+
+
+@media (max-width: 320px) {
+    .bgPopular {
+        height: 25vh; 
+    }
+
+    .textPopular {
+        font-size: 20px;
+    }
+
+    .swip1 {
+      display: none;
+    }
+
+    
+}
+
+

@@ -1,0 +1,74 @@
+.favorite-container {
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .favorite-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .empty-message {
+    text-align: center;
+    color: #666;
+  }
+  
+  .favorite-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .favorite-item {
+    width: 280px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .favorite-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .favorite-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .favorite-image {
+    object-fit: cover;
+    width:100%;
+    height: 300px;
+  }
+  
+  .favorite-name {
+    font-size: 18px;
+    padding: 10px;
+    color: #333;
+  }
+  
+  .favorite-price {
+    font-size: 16px;
+    padding: 0 10px 10px;
+    color: #e94e77; /* Цвет для цены */
+  }
+  
+  .remove-favorite {
+    background: none;
+    border: none;
+    color: #e94e77; /* Цвет для иконки удаления */
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s;
+  }
+  
+  .remove-favorite:hover {
+    color: #d72a5d; /* Темнее при наведении */
+  }
+  

@@ -1,66 +1,130 @@
-
-.img-input{
-    display: flex;
-    align-items: center;
-    input{
-    width: 200px;
-
-    }
+#admin {
+    padding: 2rem;
 }
-.admin{
-    h2{
-        color: red;
-        text-align: center;
-    }
-}
-.krc{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
 
-}
-.inputs{
+
+
+
+
+.krc {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap; /* Позволяет элементам оборачиваться на меньших экранах */
+    gap: 2rem;
+}
+
+.img-input {
+    flex: 1;
+    min-width: 300px; /* Минимальная ширина для удобства */
+}
+
+.img-input input {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0; /* light gray */
+    border-radius: 4px;
+    width: 100%;
+}
+
+.image-preview {
+    margin-top: 1rem;
+}
+
+.image-preview img {
+    max-width: 100%;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0; /* light gray */
+}
+
+.inputs {
+    flex: 2;
+    display: flex;
     flex-direction: column;
-    margin-top: 100px;
-    gap: 25px;
-    .name{
-        padding: 10px 15px;
-        width: 300px;
-        height: 45px;
-        border: 1px solid rgba(1, 0, 73, 1);
+    gap: 1rem;
+    min-width: 300px; /* Минимальная ширина для удобства */
+}
+
+.inputs input {
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0; /* light gray */
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    color: black;
+}
+
+.inputs input:focus {
+    border-color: #4a90e2; /* blue */
+    outline: none;
+}
+
+.inputs .inputt {
+    display: flex;
+    gap: 1rem;
+}
+
+.inputs .inputt input {
+    flex: 1;
+}
+
+button {
+    background-color: #4a90e2; /* blue */
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #357ab8; /* darker blue */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.about-book {
+    height: 100px; /* Set a height for the description input */
+}
+
+.Toastify__toast--error {
+    background-color: #e74c3c; /* red for errors */
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .krc {
+        flex-direction: column; /* Стили для меньших экранов */
+        align-items: center;
+    }
+
+    .img-input, .inputs {
+        width: 100%; /* Полная ширина для меньших экранов */
+      
 
     }
-    .about-book{
-        padding: 0px 0px 80px 15px;
-        width: 300px;
-        height: 130px;
-        border: 1px solid rgba(1, 0, 73, 1);
-        
+
+    .inputs .inputt {
+        flex-direction: column; /* Вертикальное расположение на меньших экранах */
+        gap: 1rem;
+      
     }
-    button{
-        width: 290px;
-        height: 45px;
-        border: 3px solid rgba(1, 0, 73, 1);
-        border-radius: 2px;
-        background: #fff;
-        font-weight: bold;
-    }
-    input{
-        border: 1px solid rgba(1, 0, 73, 1);
+
+    .inputs .inputt input {
+        width: 300px; /* Полная ширина для каждого поля ввода */
+    
+      
     }
 }
-.inputt{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    input{
-        padding: 10px 15px;
-        width: 142px;
-        height: 40px;
+
+@media (max-width: 480px) {
+    #admin {
+        padding: 1rem; /* Меньше отступов на очень маленьких экранах */
     }
+
+  
 }
+
+@media (max-width: 320px) {
+  
+
+}
+

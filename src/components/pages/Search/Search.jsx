@@ -24,11 +24,11 @@ const Search = ({bookName}) => {
                     {
                         filterSearch.map((el,idx) => (
                             <div className='box' key={idx}>
-                            <img src={el.book} alt="" />
-                  <h3>{el.name}</h3> 
+                            <img className='searchImg' src={el.imageURL} alt="" />
+                          <h3 className='searchName'>{el.name}</h3> 
                   
                        <div className="price">
-                       <span>{el.price}</span>
+                       <span>${el.price}</span>
                        </div>
                         </div>
                         ))

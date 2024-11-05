@@ -8,6 +8,7 @@ import Search from './components/pages/Search/Search';
 import { useState } from 'react';
 import Edit from './components/pages/Edit/Edit';
 import Detal from './components/pages/Detal/Detal';
+import Favorite from './components/pages/Favorites/Favorite';
 
 function App() {
   const [value , setValue] = useState('')
@@ -21,7 +22,9 @@ function App() {
     <Route path='/basket' element={<Basket/>} key={3}/>
     <Route path='/Search' element={<Search bookName ={value}/>} key={4} />
     <Route path='/edit/:id' element={<Edit/> } key={5}/>
-    <Route path='/detal/:proId' element={<Detal/>}/>
+    <Route path='/detal/:proId' element={<Detal/>}key={6}/>
+    <Route path='/favorite' element={<Favorite/>} key={7}/>
+
     </Routes>
     </div>
   );

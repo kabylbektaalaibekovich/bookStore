@@ -1,49 +1,59 @@
 import React from 'react';
 import { useMainContext } from '../../context/Maincontext';
-import Hero from './Hero';
 import { Link, useNavigate } from 'react-router-dom';
 import { MdDeleteOutline } from "react-icons/md";
 import { FaPencil } from "react-icons/fa6";
 import { BsCart3 } from "react-icons/bs";
-import axios from 'axios';
-const HeroCart = ({el}) => {
-const navi = useNavigate()
+import CountUp from 'react-countup';  
+import { MdFavorite } from "react-icons/md";
+import { MdFavoriteBorder } from "react-icons/md";
 
-const {book , basket , setBasket} = useMainContext()
-const{removeData} = useMainContext()
+const HeroCart = ({ el }) => {
+  const navi = useNavigate();
+  const { addBasket, removeData, addFavorite, favorite  , removeFavorite} = useMainContext();
 
-// const addBasket = async (obj) => {
-//     await axios.post('http://localhost:3000/basket', obj)
-   
-//    }
-function addBasket(data){
-  let findProd = basket.find((el =>  el.id === data.id));
-  if(findProd){
-    let filtProd = basket.filter((el) => !el.id === data.id);
-  localStorage.setItem('basket' , JSON.stringify(filtProd))
+  const isFavorite = favorite.some((item) => item.id === el.id);
 
-}else{
-  let res = [...basket , data]
-  setBasket(res)
-  localStorage.setItem('basket' , JSON.stringify(res))
-}
-}
-    return (
-        <div>
-     <div className='box'>
-     <Link to={`/detal/${el.id}`}>  <img src={el.book} alt="" /></Link> 
-<h3 >{el.name}</h3>
-     <div className="price">
-     <span>{el.price}</span>
-       <div className="delete">
-       <button  className='favorite'onClick={()=>addBasket(el)}><BsCart3 /></button>
-       <button  className='editBtn'  onClick={() =>  navi(`/edit/${el.id}`)}><FaPencil /></button>
-        <button className='delBtn'onClick={() => removeData(el.id)}> <MdDeleteOutline/></button>
-       </div>
-     </div>
-      </div>
+  const handleFavoriteClick = () => {
+    if (isFavorite) {
+      removeFavorite(el.id);
+    } else {
+      addFavorite(el); 
+    }
+  };
+  
+  return (
+    
+    <div className="mainBox">
+      <div className="box">
+        <Link to={`/detal/${el.id}`}>
+          <img src={el.imageURL} alt={el.name} className="product-image" />
+        </Link>
+        <button
+          onClick={handleFavoriteClick}
+          className="favorite"
+          style={{ color: isFavorite ? 'black' : 'inherit' }} 
+        >
+          {isFavorite ? <MdFavorite /> : <MdFavoriteBorder />} 
+        </button>
+        <div className="price">
+        <h3 className="product-name">{el.name}</h3>
+          <span className="span-price">${' '} <CountUp start={0} end={el.price} duration={2.75} separator=" " /></span>
+       
+          <button className="basBtn" onClick={() => addBasket(el)}>
+            <BsCart3 />
+          </button>
+          <button className="editBtn" onClick={() => navi(`/edit/${el.id}`)}>
+            <FaPencil />
+          </button>
+          <button className="delBtn" onClick={() => removeData(el.id)}>
+            <MdDeleteOutline />
+          </button>
+          </div>
         </div>
-    );
+      
+      </div>
+  );
 };
 
 export default HeroCart;

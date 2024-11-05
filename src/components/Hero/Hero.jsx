@@ -1,80 +1,99 @@
-import React, { useEffect, useState } from 'react';
-import './Hero.css'
+import React, { useEffect } from 'react';
+import './Hero.css';
 import { useMainContext } from '../../context/Maincontext';
-
-import { Link, useNavigate } from 'react-router-dom';
+import Marquee from 'react-fast-marquee';
 import HeroCart from './HeroCart';
+import LowerSection from '../LowerSection/LowerSection';
+const Hero = () => {
+const { book, category, setCategory, readBook } = useMainContext();
+const filterBooks = category ? book.filter((el) => el.category === category) : book;
+useEffect(() => {
+readBook();
+}, []);
 
+return (
+<div id='hero' className="hero-container">
+<div className="container">
+<div className="hero">
+<h1 className='hero-title'>Категории</h1>
 
-const Hero = ({el}) => {
-const {book , category , setCategory, readBook, basket , setBasket } = useMainContext()
-const filterBooks = category ? book.filter((el) => el.category === category) : book
-
-useEffect(()=> {
-    readBook()
-},[])
-
-
-
-
-
-    return (
-        <div id='hero'>
-            <div className="container">
-                <div className="hero">  
-<h1>Категории</h1>
-
-
-<div className="image">
-
-<div onClick={() => setCategory('')} className='img'>
-    <img src="https://www.cambourne.info/wp-content/uploads/2019/03/Cambourne-Book-Club.jpg" alt="" />
-    <h3>Все книги</h3>
-</div>
-<div onClick={() => setCategory('Психология')} className="img-0">
-        <img src="https://goal-life.com/img/main/page/kniga/po-psihologii/review/labkovskiy.jpg" alt="" />
-        <h3>Психология</h3>
-    </div>
-
-    <div onClick={() => setCategory("Детектив")} className="img1">
-        <img src="https://www.moscowbooks.ru/image/book/749/orig/i749078.jpg?cu=20220418143509" alt="" />
-        <h3>Детектив</h3>
-    </div>
-    <div onClick={() => setCategory("Фантастика")}  className="img2">
-        <img src="https://cdn.pixabay.com/photo/2017/08/27/23/59/marvel-2688068_1280.jpg" alt="" />
-        <h3>Фантастика</h3> 
-    </div>
-    <div onClick={() => setCategory('Приключения')} className="img3">
-        <img src="https://img3.labirint.ru/rc/8d36aae14ecc92e5ecd24a01a3d10f86/363x561q80/books74/738479/cover.jpg?1582007142" alt="" />
-        <h3>Приключения</h3>
-    </div>
-    <div onClick={() => setCategory('Научная')} className="img4">
-
-
-        <img src="https://img4.labirint.ru/rc/d28712781940257675bc1d165b1edca9/363x561q80/books31/308850/cover.jpg?1322569663" alt="" />
-        <h3>Научная</h3>
-    </div>
-    <div  onClick={() => setCategory('Разработчик')} className="dev">
-    <img src="https://askerweb.by/wp-content/uploads/2021/09/oblozhka-4.png" alt="" />
-    <h3>Книги для программистов</h3>
-  </div>
-    <div onClick={() => setCategory('Мотивация')} className="img5">
-        <img src="https://cv6.litres.ru/pub/c/cover_415/2873865.jpg" alt="" />
-        <h3>Мотивация</h3>
-    </div>
-    <div className="book">
-
-                </div>
-</div>
-</div>
+<Marquee  className="marquee-items" speed={150}>
+<div className="marquee-items">
+<div onClick={() => setCategory('')} className="card">
+<a href="#">
+<img className="card-image" src="https://static.lsm.lv/media/2022/07/large/4/iivt.jpg" alt="Все книги" />
+ </a>
+<div className="card-content">
+<h5 className="card-title">Все книги</h5>
+            </div>
  </div>
-<div className="book">
-{
-    filterBooks.map((el) => (
-   <HeroCart el={el} key={el} />
+<div onClick={() => setCategory('Психология')} className="card">
+            <a href="#">
+                <img className="card-image" src="https://lh5.googleusercontent.com/proxy/9-NHOVDCSGzc13rAky1_061sI8rkEVFtXr5V_yLR0l2fyAt3AxGu9tZq3cpAW4_nOjwmsgWZkzSVI84FQ7kNvmhEX5ef0q4wZ5Z7DXLLs_PM1CXdRpY9YEVR61sFKvLTtOjWNnXhhO6NGzxUanO0AlU" alt="Психология" />
+            </a>
+            <div className="card-content">
+                <h5 className="card-title">Психология</h5>
+            </div>
+</div>
+<div onClick={() => setCategory('Детектив')} className="card">
+            <a href="#">
+                <img className="card-image" src="https://penfox.ru/wp-content/uploads/2019/04/Idei-dlya-detektiva.png" alt="Детектив" />
+            </a>
+            <div className="card-content">
+                <h5 className="card-title">Детектив</h5>
+            </div>
+</div>
+<div onClick={() => setCategory('Фантастика')} className="card">
+            <a href="#">
+                <img className="card-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqaN4cOm6Xp5WH6t3xdzyxb6D-YLFxkctxaA&s" alt="Фантастика" />
+            </a>
+            <div className="card-content">
+                <h5 className="card-title">Фантастика</h5>
+            </div>
+</div>
+<div onClick={() => setCategory('Приключения')} className="card">
+            <a href="#">
+                <img className="card-image" src="https://i.ytimg.com/vi/b0Fwjmbs4KA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCGh4uygo4IgMED0zzdNW2JITqFMQ" alt="Приключения" />
+            </a>
+            <div className="card-content">
+                <h5 className="card-title">Приключения</h5>
+            </div>
+</div>
+<div onClick={() => setCategory('Научная')} className="card">
+            <a href="#">
+                <img className="card-image" src="https://prof-ras.ru/media/k2/items/cache/2e83d7bc595a142d5b8cc7504455fc0e_XL.jpg" alt="Научная" />
+            </a>
+            <div className="card-content">
+                <h5 className="card-title">Научная</h5>
+            </div>
+</div>
+<div onClick={() => setCategory('Мотивация')} className="card">
+            <a href="#">
+                <img className="card-image" src="https://i.ytimg.com/vi/8E9uIDbNsh0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA4Yrq3mYWQ-wR_IUOl43Ib-r5edQ" alt="Научная" />
+            </a>
+            <div className="card-content">
+                <h5 className="card-title">Мотивация</h5>
+            </div>
+</div>
+<div onClick={() => setCategory('Программирование')} className="card">
+            <a href="#">
+                <img className="card-image" src="https://cdn2.hexlet.io/derivations/image/fill_png/1200/565/eyJpZCI6IjBlMTFjMGU4YmZmNGQ2MDNiODU2ZGFjZDRlYzc2YjYzLnBuZyIsInN0b3JhZ2UiOiJ5YV9zdG9yZSJ9?signature=ee4e4b592c3c53934835b831006fb1f3c16c64a485889abec54096303b476bfa" alt="Научная" />
+            </a>
+            <div className="card-content">
+                <h5 className="card-title">Программирование</h5>
+            </div>
+</div>
+</div>
+</Marquee>
+<div className="book-list">
+ {filterBooks.map((el) => (
+<HeroCart el={el} key={el.id} />
 ))}
 </div>
- </div>
+</div>
+</div>
+<LowerSection/>
+</div>
     );
 };
 

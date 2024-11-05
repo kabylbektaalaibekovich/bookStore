@@ -1,57 +1,75 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useMainContext } from '../../../context/Maincontext';
+import BasketCart from './BasketCart';
+import { Link, useNavigate } from 'react-router-dom';
 import './Basket.css'
-import { Link } from 'react-router-dom';
-import TextField from '@mui/material/TextField';
+import { BsCart3 } from "react-icons/bs";
+import CountUp from 'react-countup';
+import Footer from '../../Footer/Footer';
 
-const Basket = () => {
-    const{basket } = useMainContext();
-    // useEffect(() =>{readBasket()},[])
+const Basket = ({}) => {
+    const { basket,  book,addBasket  } = useMainContext();
+    const navigate = useNavigate()
+
+ 
+    
     
     return (
-        <div id='basket'>
-            <div className="container">
-                <div className="basket">
-                    {
-                        basket.map((el) => (
-                            <div className='box'>
-                        <Link to={`/detal/${el.id}`}> <img src={el.book} alt="" /></Link>
-                       <h3>{el.name}</h3> 
-                       <div className="price">
-                       <span>{el.price}</span>
-                       </div>
-                        </div>
-                        ))
-                    }
-                </div>
-            </div>
-            <div className="inputs ">
-        <h2>Submit Telegram</h2>
-    <TextField className='inp-1'
-          id="standard-multiline-flexible"
-          label="Имя"
-          multiline
-          maxRows={4}
-          variant="standard"
-        />
-          <TextField className='inp-1'
-          id="standard-multiline-flexible"
-          label="Адрес"
-          multiline
-          maxRows={4}
-          variant="standard"
-        />
-          <TextField className='inp-1'
-          id="standard-multiline-flexible"
-          label="Телефон"
-          multiline
-          maxRows={4}
-          variant="standard"
-        />
-        <button className=''>Submit</button>
-    </div>
-        </div>
+   
+<section className='shop'>
+<div className="container">
+  <div className="shopBox">
+      {basket.length > 0 ? (
+          basket.map((el, idx) => <BasketCart el={el} key={idx} />)
+      ) : (
+          
+          <div className='emptyBasket'>
+ <img className='emptyImg' src="https://cdn-icons-png.flaticon.com/512/3825/3825062.png" alt="" />
+ <h1 className='emptyH1'>The cart is empty , <span className='emptySpan'>but this can be fixed!</span></h1>
+ <button className='emptyBtn' onClick={() => navigate('/')}>Go to product catalog</button>
+          </div>
+      )}
+  </div>
+
+
+  <div className="Mainrecomend">
+  <h1 className='MainrecomendH1'>Возможно, Вам понравится</h1>
+  <div className='recomend'>
+  {
+  book.slice(5,9).map((el) => (
+   <div className='recomendCard'>
+   <div className='card'>
+   <Link className='product-image' to={`/detal/${el.id}`}><img className='product-image' src={el.imageURL} alt="" /></Link> 
+   
+   <h3 >{el.name}</h3>
+   <div className="card-title">
+   <span className='span-price'>${' '}
+    <CountUp
+   start={0}
+   end={el.price}
+   duration={2.75}
+   separator=" "
+   > 
+   </CountUp>
+   </span>
+   <button  className='basBtn'onClick={()=>addBasket(el)}><BsCart3 /></button>
+   </div>
+   </div>
+   </div>
+  ))}
+  </div>
+</div>
+</div>
+<Footer/>
+</section>
     );
 };
 
 export default Basket;
+
+
+
+
+
+
+

@@ -6,3 +6,15 @@
    flex-wrap: wrap;
    gap: 30px;
 }
+
+@media(max-width:767px){
+    .box{
+        width: 200px;
+        height: auto;
+    }
+    .searchName{
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+}

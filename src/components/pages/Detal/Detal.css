@@ -6,14 +6,12 @@
 .book{
     display: flex;
     align-items: center;
-    
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 
 }
 
- .inp-1{
-        width: 500px;
 
-    }
 
     .book-img{
         display: flex;
@@ -21,43 +19,117 @@
 
     }
     .book-text{
+        display: flex;
+        flex-direction: column;
         h1{
             font-family: sans-serif;
 
         }
-        display: flex;
-        flex-direction: column;
+       
         .text-3{
             margin-top: 10px;
-            width: 400px;
+            width: 100%;
             font-weight: 100;
             font-family: sans-serif;
             line-height: 30px;
+            letter-spacing: 4px;
         }
-        span{
-            font-size: 20px;
-            margin-top: 10px;
-        }
+    
     }
 
   
-    .count-btn{
-        display: flex;
-        align-items: center;
-        padding: 10px 0;
-        gap: 10px;
-      h5{
-        font-size: 20px;
-      }
 
-.countBtn-1{
-    background: none;
-    border: none;
-  
+
+
+.detalCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
 }
-.countBtn-2{
-    background: none;
-    border: none;
-  
+.detail-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
+
+.book-image {
+    width: 300px; /* Увеличенный размер изображения */
+    height: auto;
+    border-radius: 8px;
+}
+
+.detail-content {
+    flex: 1; /* Занять оставшееся пространство */
+}
+
+.book-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.book-description {
+    width: 500px;
+    padding: 5px 0px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.read-more-button {
+    background: none; 
+    color: black; 
+    border: none; 
+    cursor: pointer; 
+}
+.read-more-button:hover {
+    background: none; 
+    color: black; 
+    border: none; 
+    cursor: pointer; 
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.quantity-button {
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quantity-display {
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.price-container {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.add-to-basket-button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Цвет кнопки */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-to-basket-button:hover {
+    background-color: #0056b3; /* Цвет при наведении */
+}
+
+
+@media(max-width:767px){
+    .detalImg{
+        width: 100px;
     }
+}

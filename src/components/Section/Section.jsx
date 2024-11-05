@@ -38,6 +38,7 @@ const Section = () => {
 </div>
             </div>
    <Hero />
+   
   
 
         </div>
